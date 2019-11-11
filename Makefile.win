@@ -1,0 +1,37 @@
+# Project: opengldemo
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = hello_window.o hello_triangle.o hello_triangle_exercise.o glad.o
+LINKOBJ  = hello_window.o hello_triangle.o hello_triangle_exercise.o glad.o
+LIBS     = -L"E:/Dev-Cpp/MinGW64/lib" -L"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc F:/openGL_demo/glfw-3.3.bin.WIN64/lib-mingw-w64/libglfw3dll.a -g3
+INCS     = -I"E:/Dev-Cpp/MinGW64/include" -I"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"F:/openGL_demo/glad/include" -I"F:/openGL_demo/glfw-3.3.bin.WIN64/include"
+CXXINCS  = -I"E:/Dev-Cpp/MinGW64/include" -I"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"F:/openGL_demo/glad/include" -I"F:/openGL_demo/glfw-3.3.bin.WIN64/include"
+BIN      = opengldemo.exe
+CXXFLAGS = $(CXXINCS) -std=c++11 -g3
+CFLAGS   = $(INCS) -std=c++11 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+hello_window.o: hello_window.cpp
+	$(CPP) -c hello_window.cpp -o hello_window.o $(CXXFLAGS)
+
+hello_triangle.o: hello_triangle.cpp
+	$(CPP) -c hello_triangle.cpp -o hello_triangle.o $(CXXFLAGS)
+
+hello_triangle_exercise.o: hello_triangle_exercise.cpp
+	$(CPP) -c hello_triangle_exercise.cpp -o hello_triangle_exercise.o $(CXXFLAGS)
+
+glad.o: glad.c
+	$(CPP) -c glad.c -o glad.o $(CXXFLAGS)
