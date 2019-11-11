@@ -1,4 +1,3 @@
-/*
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -11,4 +10,3 @@ const int height = 800;
 int main(){
 	return 0;
 }
-*/
