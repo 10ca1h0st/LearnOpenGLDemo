@@ -35,3 +35,7 @@
 
 #vscode
 .vscode/
+
+#dev c++
+*.dev
+*.layout
