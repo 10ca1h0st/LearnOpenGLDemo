@@ -6,9 +6,9 @@ CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
 OBJ      = hello_window.o hello_triangle.o hello_triangle_exercise.o glad.o Shaders.o
 LINKOBJ  = hello_window.o hello_triangle.o hello_triangle_exercise.o glad.o Shaders.o
-LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc F:/openGL_demo/glfw-3.3.bin.WIN64/lib-mingw-w64/libglfw3dll.a -g3
-INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"F:/openGL_demo/glad/include" -I"F:/openGL_demo/glfw-3.3.bin.WIN64/include"
-CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"F:/openGL_demo/glad/include" -I"F:/openGL_demo/glfw-3.3.bin.WIN64/include"
+LIBS     = -L"E:/Dev-Cpp/MinGW64/lib" -L"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc F:/openGL_demo/glfw-3.3.bin.WIN64/lib-mingw-w64/libglfw3dll.a -g3
+INCS     = -I"E:/Dev-Cpp/MinGW64/include" -I"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"F:/openGL_demo/glad/include" -I"F:/openGL_demo/glfw-3.3.bin.WIN64/include"
+CXXINCS  = -I"E:/Dev-Cpp/MinGW64/include" -I"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"F:/openGL_demo/glad/include" -I"F:/openGL_demo/glfw-3.3.bin.WIN64/include"
 BIN      = opengldemo.exe
 CXXFLAGS = $(CXXINCS) -std=c++11 -g3
 CFLAGS   = $(INCS) -std=c++11 -g3
