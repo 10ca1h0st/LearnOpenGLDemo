@@ -34,7 +34,7 @@
 *.app
 
 #vscode
-.vscode/
+#.vscode/
 
 #dev c++
 #*.dev
