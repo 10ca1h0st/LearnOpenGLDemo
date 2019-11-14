@@ -92,10 +92,12 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         // render the triangle
-        right_move += 0.2;
-        if(right_move>1){
-        	right_move = 0.0f;
-		}
+        if (glfwGetKey(window, GLFW_KEY_RIGHT_BRACKET) == GLFW_PRESS){
+            right_move += 0.1;
+            if(right_move>1){
+                right_move = 0.0f;
+            }
+        }
         ourShader.use();
         //ourShader.setFloat("right_move",right_move);
         glBindVertexArray(VAO);
