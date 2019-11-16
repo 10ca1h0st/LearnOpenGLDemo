@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "F:/openGL_demo/glad/include",
-                "F:/openGL_demo/glfw-3.3.bin.WIN64/include"
+                "F:/openGL_demo/glfw-3.3.bin.WIN64/include",
+                "./glm"
             ],
             "defines": [
                 "_DEBUG",
