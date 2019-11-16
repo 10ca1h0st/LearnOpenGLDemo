@@ -4,7 +4,7 @@ Name=opengldemo
 Type=1
 Ver=2
 ObjFiles=
-Includes=F:\openGL_demo\glad\include;F:\openGL_demo\glfw-3.3.bin.WIN64\include
+Includes=F:\openGL_demo\glad\include;F:\openGL_demo\glfw-3.3.bin.WIN64\include;./glm
 Libs=
 PrivateResource=
 ResourceIncludes=
@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=00000000c0000000001000000
-UnitCount=10
+UnitCount=12
 
 [VersionInfo]
 Major=1
@@ -142,6 +142,26 @@ BuildCmd=
 
 [Unit9]
 FileName=stb_image.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit11]
+FileName=test_glm.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit12]
+FileName=texture_glm.cpp
 CompileCpp=1
 Folder=
 Compile=1
