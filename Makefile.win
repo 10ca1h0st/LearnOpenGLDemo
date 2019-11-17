@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = hello_window.o hello_triangle.o hello_triangle_exercise.o glad.o Shaders.o texture_exercise.o used_for_stb_image_h.o test_glm.o texture_glm.o
-LINKOBJ  = hello_window.o hello_triangle.o hello_triangle_exercise.o glad.o Shaders.o texture_exercise.o used_for_stb_image_h.o test_glm.o texture_glm.o
+OBJ      = hello_window.o hello_triangle.o hello_triangle_exercise.o glad.o Shaders.o texture_exercise.o used_for_stb_image_h.o test_glm.o texture_glm.o coordinate_system.o coordinate_system_depth.o coordinate_system_morecube.o camera.o
+LINKOBJ  = hello_window.o hello_triangle.o hello_triangle_exercise.o glad.o Shaders.o texture_exercise.o used_for_stb_image_h.o test_glm.o texture_glm.o coordinate_system.o coordinate_system_depth.o coordinate_system_morecube.o camera.o
 LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc F:/openGL_demo/glfw-3.3.bin.WIN64/lib-mingw-w64/libglfw3dll.a -g3
 INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"F:/openGL_demo/glad/include" -I"F:/openGL_demo/glfw-3.3.bin.WIN64/include" -I"./glm"
 CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"F:/openGL_demo/glad/include" -I"F:/openGL_demo/glfw-3.3.bin.WIN64/include" -I"./glm"
@@ -50,3 +50,15 @@ test_glm.o: test_glm.cpp
 
 texture_glm.o: texture_glm.cpp
 	$(CPP) -c texture_glm.cpp -o texture_glm.o $(CXXFLAGS)
+
+coordinate_system.o: coordinate_system.cpp
+	$(CPP) -c coordinate_system.cpp -o coordinate_system.o $(CXXFLAGS)
+
+coordinate_system_depth.o: coordinate_system_depth.cpp
+	$(CPP) -c coordinate_system_depth.cpp -o coordinate_system_depth.o $(CXXFLAGS)
+
+coordinate_system_morecube.o: coordinate_system_morecube.cpp
+	$(CPP) -c coordinate_system_morecube.cpp -o coordinate_system_morecube.o $(CXXFLAGS)
+
+camera.o: camera.cpp
+	$(CPP) -c camera.cpp -o camera.o $(CXXFLAGS)

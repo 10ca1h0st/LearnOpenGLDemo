@@ -3,7 +3,7 @@
 #include <GLFW/glfw3.h>
 #include "stb_image.h"
 
-#include "shader_s.h"
+#include "shader.h"
 
 #include <iostream>
 
@@ -53,7 +53,7 @@ int main()
 
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader ourShader("texture_glm.vs", "texture_glm.fs");
+    Shader ourShader("6.1.coordinate_system.vs", "6.1.coordinate_system.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -92,6 +92,8 @@ int main()
     glEnableVertexAttribArray(2);
 
 
+    stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
+
     // load and create a texture 
     // -------------------------
     unsigned int texture1, texture2;
@@ -107,7 +109,6 @@ int main()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // load image, create texture and generate mipmaps
     int width, height, nrChannels;
-    stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
     unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
     if (data)
@@ -177,16 +178,24 @@ int main()
 		
         glBindVertexArray(VAO);
 
-		glm::mat4 trans;
-		//trans = glm::translate(trans,glm::vec3(0.5f,-0.5f,0.0f));
-		//trans = glm::rotate(trans,(float)glfwGetTime(),glm::vec3(0.0f,0.0f,1.0f));
-		//trans = glm::rotate(trans,glm::radians(-90.0f),glm::vec3(0.0,0.0,1.0));
-		//trans = glm::scale(trans,glm::vec3(0.5f,.5f,0.5f));
+		glm::mat4 model,view,projection;
+        model = glm::rotate(model,glm::radians(-55.0f),glm::vec3(1,0,0));
+        view = glm::translate(view,glm::vec3(0,0,-3));
+        projection = glm::perspective(glm::radians(45.0f),(float)SCR_WIDTH/(float)SCR_HEIGHT,0.1f,100.0f);
+
+        unsigned int modelLoc,viewLoc,projectionLoc;
+        modelLoc = glGetUniformLocation(ourShader.ID,"model");
+        viewLoc = glGetUniformLocation(ourShader.ID,"view");
+        projectionLoc = glGetUniformLocation(ourShader.ID,"projection");
 
 
-		ourShader.use();
-		unsigned int transformLoc = glGetUniformLocation(ourShader.ID,"transform");
-		glUniformMatrix4fv(transformLoc,1,GL_FALSE,glm::value_ptr(trans));
+        glUniformMatrix4fv(modelLoc,1,GL_FALSE,&model[0][0]);
+        glUniformMatrix4fv(viewLoc,1,GL_FALSE,&view[0][0]);
+        glUniformMatrix4fv(projectionLoc,1,GL_FALSE,&projection[0][0]);
+
+        ourShader.use();
+
+
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
@@ -223,5 +232,4 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
-
 */
