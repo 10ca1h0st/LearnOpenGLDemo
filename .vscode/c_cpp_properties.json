@@ -13,7 +13,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "D:\\Dev-Cpp\\MinGW64\\bin\\gcc.exe",
+            "compilerPath": "g++.exe",
             "cStandard": "c11",
             "cppStandard": "c++14",
             "intelliSenseMode": "clang-x64"
