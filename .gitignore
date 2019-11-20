@@ -17,6 +17,7 @@
 *.dll
 
 !glfw3.dll
+!assimp.dll
 
 # Fortran module files
 *.mod
@@ -27,6 +28,8 @@
 *.la
 *.a
 *.lib
+
+!assimp.lib
 
 # Executables
 *.exe
@@ -39,3 +42,5 @@
 #dev c++
 #*.dev
 #*.layout
+
+!/resources
