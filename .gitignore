@@ -43,4 +43,4 @@
 #*.dev
 #*.layout
 
-!/resources
+/resources/
